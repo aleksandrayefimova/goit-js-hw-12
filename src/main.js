@@ -18,7 +18,6 @@ const refs = {
 };
 
 
-
 loadMoreButton.buttonAdress = refs.loadMoreButton
 
 let totalImagesUploaded = 20;
