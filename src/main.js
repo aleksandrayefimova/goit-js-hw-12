@@ -62,6 +62,7 @@ async function onSumbitForm(event) {
 
         iziToast.success({
             message: `Hooray! We found ${totalHits} images.`,
+            position: "topRight"
         });
         refs.gallery.insertAdjacentHTML("beforeend", markup(hits));
         refs.searchButton.disabled = false;
@@ -110,8 +111,8 @@ async function onSumbitLoadMore(event) {
         totalImagesUploaded += 20;
         if (totalImagesUploaded >= totalHits) {
             iziToast.warning({
-                title: 'Увага',
                 message: "We're sorry, but you've reached the end of search results.",
+                position: "topRight"
             });
             loadMoreButton.buttonState({
                 isHiden: true,
@@ -120,7 +121,8 @@ async function onSumbitLoadMore(event) {
         }
         const { height: cardHeight } = document.querySelector(".gallery").firstElementChild.getBoundingClientRect();
         window.scrollBy({
-            top: cardHeight * 2.55,
+            top: cardHeight * 2,
+            // top: cardHeight * 2.55,
             behavior: "smooth",
         });
         const lightbox = new SimpleLightbox('.gallery a');
